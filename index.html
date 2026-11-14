@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dicionário de Dados - Assaí Atacadista</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menuBtn" class="btn ghost" aria-label="Abrir menu">Menu</button>
+  <img src="assets/logo.png" alt="Assaí Atacadista" class="logo">
+  <div class="ttl"><strong>Dicionário de Dados - Sistema de E-commerce e Gestão de Pedidos</strong><span>Assaí Atacadista</span></div>
+  <button id="themeBtn" class="btn ghost">Modo escuro</button>
+</header>
+<div class="layout">
+  <nav id="sidebar" class="sidebar"><h3>Tabelas</h3><div id="navList"></div></nav>
+  <main class="main">
+    <section id="identificacao" class="card">
+      <h2>Identificação do Projeto</h2>
+      <p><b>Escopo:</b> Especificação de requisitos e modelagem de banco de dados do e-commerce do Assaí Atacadista, no modelo de atacarejo, atendendo consumidores finais (PF) e pequenos comerciantes (PJ) com preços distintos. Objetiva controle rigoroso de estoque por loja, preço de atacado automático por volume, imutabilidade do histórico de pedidos e conformidade com LGPD, CDC e normas fiscais.</p>
+      <p><b>Tecnologia:</b> MySQL (InnoDB, schema <code>mydb</code>, charset utf8).</p>
+      <p><b>Professor orientador:</b> Prof. Dr. Diego Carvalho</p>
+      <h3>Responsáveis</h3>
+      <table class="mini"><thead><tr><th>Integrante</th><th>Papel de governança</th></tr></thead><tbody>
+        <tr><td>Mickael de Souza Duete</td><td>Data Owner - Regras de Negócio</td></tr>
+        <tr><td>David Henry H. Carita</td><td>Data Steward - Qualidade Técnica e Dicionário</td></tr>
+        <tr><td>Deiwison da Silva Santos</td><td>Data Steward - Mapeamento das entidades e restrições de integridade</td></tr>
+      </tbody></table>
+    </section>
+    <section class="card panel">
+      <a class="btn" href="docs/Especificacao_Requisitos_Regras_Negocio_BD.pdf" download>Baixar Especificação de Requisitos (PDF)</a>
+      <button class="btn alt" id="derBtn">Abrir DER</button>
+      <input id="search" type="search" placeholder="Filtrar por tabela ou coluna..." aria-label="Pesquisar">
+      <div class="legend"><span class="badge dps">DPS</span> sensível <span class="badge dp">DP</span> pessoal <span class="badge na">N/A</span> não aplicável</div>
+    </section>
+    <div id="tables"></div>
+    <p id="empty" class="card" hidden>Nenhum resultado encontrado.</p>
+  </main>
+</div>
+<div id="modal" class="modal" hidden>
+  <div class="mtools">
+    <button class="btn" id="zin">Zoom +</button><button class="btn" id="zout">Zoom -</button>
+    <button class="btn alt" id="zreset">Reset</button><button class="btn ghost" id="zclose">Fechar</button>
+  </div>
+  <div id="stage" class="stage"><img id="derImg" src="assets/der.png" alt="Diagrama Entidade-Relacionamento"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
